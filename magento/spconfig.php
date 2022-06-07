@@ -10,8 +10,8 @@ function details($url){
 	nr_match('name="product" value="(.*?)"', $cache, $_code);
 	$import->code($_code);
 
-	// TITLE
-	nr_match('<h1 class="page-title".*?>(.*?)</h1', $cache, $_title);
+// TITLE
+	nr_match('"\@type":"Product".*?"name":"(.*?)"', $cache, $_title);
 	$import->title($_title);
 
 	// DESCRIPTION
@@ -35,7 +35,7 @@ function details($url){
 	// CATEGORIES
 	nr_match('class="breadcrumbs".*?>(.*?)</ul>', $cache, $_categorytagsBlocks);
 	nr_match_all('<a.*?>(.*?)</a>', $_categorytagsBlocks, $_categorytags);
-	$import->categorytags_insert($_categorytags,1,0);
+	$import->categorytags_ins	ert($_categorytags,1,0);
 
 	// BRAND
 	nr_match('product_brand : "(.*?)"', $cache, $_brand);

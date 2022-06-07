@@ -13,7 +13,7 @@ function details($url){
 	$import->code($_code);
 
 	// TITLE
-	nr_match('<h1.*?>(.*?)</h1>', $cache, $_title);
+	nr_match('"\@type":"Product".*?"name":"(.*?)"', $cache, $_title);
 	$import->title($_title);
 
 	// DESCRIPTION

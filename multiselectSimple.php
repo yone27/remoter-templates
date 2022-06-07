@@ -43,9 +43,9 @@ function details($url){
 	nr_match('title-brand-product">(.*?)</', $cache, $_brand);
 	$import->add_brand($_brand);
 
-	// MPN
-	nr_match('itemprop="mpn" content="(.*?)"', $_price_data, $_submpn);
-	$import->add_code('MPN',  $_submpn);		
+		// MPN
+		nr_match('itemprop="mpn" content="(.*?)"', $_price_data, $_submpn);
+		$import->add_code('MPN',  $_submpn);		
 
 
 	// SUB_PRODUCTS
